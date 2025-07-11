@@ -25,6 +25,19 @@ Upon submission the info is saved to the organizations Docusign account.
 
 ## Frontend Notes
 
-This draft was a quick imitation of what B-Signature had for their 
+This draft was a quick imitation of what B-Signature had for their form created with CRA. Ideally use a lighter weight tool like Vite for setup. B-Signature has little to no error checks, which should be implemented for this form. 
 
 ## Docusign Implmentation Notes
+
+Use the Docusign E-Signature API to create embedded and remote signing sessions for the applicant and social worker. You can find the docs here https://developers.docusign.com/docs/esign-rest-api/.
+
+1) Authenticate with Confidential Authorization Code Grant to get access token for API use: https://developers.docusign.com/platform/auth/confidential-authcode-get-token/
+2) Create an envelope with documents, tabs, and recipients. Use this to create an embedded signing session: https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-in-app-embedded/
+  - Prior to doing this an application form is needed. Add anchor tags in the PDF to make adding tabs with Docusign easier: https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/tabs/
+  - Since two paties need to sign a routing order must be specified: https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/recipients/
+3) Create a remote signing sessoin for the social worker: https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-email-remote/
+4) Customize the email sent out for signatures: https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/branding/
+
+## Production
+
+This form will act as a standalone app that exists on a subdomain of https://thekccf.org/ like https://aid.thekccf.org/. 
