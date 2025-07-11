@@ -9,7 +9,7 @@ Upon submitting the form the user begins a Docusign embedded signing session. as
 
 The fields are populated with the user's provided information and user can edit them. The document asks for supporting documents and e-signatures. 
 
-Upon submitting the signature the user is directed back to a completion page and the social worker receives an email. 
+Upon submitting the signature, the user is directed back to a completion page and the social worker receives an email. 
 
 <img width="1436" height="711" alt="Screenshot 2025-07-11 at 11 22 49 AM" src="https://github.com/user-attachments/assets/4383e084-d9fd-4a81-8624-a5ccba38b745" />
 
@@ -34,7 +34,7 @@ Use the Docusign E-Signature API to create embedded and remote signing sessions 
 1) Authenticate with Confidential Authorization Code Grant to get access token for API use: https://developers.docusign.com/platform/auth/confidential-authcode-get-token/
 2) Create an envelope with documents, tabs, and recipients. Use this to create an embedded signing session: https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-in-app-embedded/
   - Prior to doing this an application form is needed. Add anchor tags in the PDF to make adding tabs with Docusign easier: https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/tabs/
-  - Since two paties need to sign a routing order must be specified: https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/recipients/
+  - Since two paties need to sign, a routing order must be specified: https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/recipients/
 3) Create a remote signing sessoin for the social worker: https://developers.docusign.com/docs/esign-rest-api/how-to/request-signature-email-remote/
 4) Customize the email sent out for signatures: https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/branding/
 
